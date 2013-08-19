@@ -28,6 +28,8 @@ function! <SID>Smart_TabComplete()
 
 endfunction
 
+" use shift tab as normal tab to separate words
+inoremap <silent> <s-tab> <tab>
 inoremap <silent> <expr> <c-space> pumvisible() ? "\<lt>C-x><C-o>" :  '\<lt>c-p><c-r>=pumvisible() ?  : <c-x><c-p>'
 inoremap <silent> <expr> <tab> pumvisible() ? "\<lt>C-N>" :  "<C-R>=<SID>Smart_TabComplete()<cr>"
 inoremap <silent> <expr> <s-tab> pumvisible() ? "\<lt>C-P>" : "\<s-tab><CR>"
