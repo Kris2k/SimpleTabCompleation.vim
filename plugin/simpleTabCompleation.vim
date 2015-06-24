@@ -13,9 +13,10 @@ function! <SID>Smart_TabComplete()
         return "\<tab>"
     endif
 
-    let l:substr =  matchstr(substr,'\ [^\ ]*$')
+    let l:substr =  matchstr(substr,'\s[^\s]*$')
     let l:has_slash = match(substr, '\/') != -1       " position of slash, if any
     let l:has_omnifunc = strlen(&omnifunc)
+
     if (!l:has_slash)
         return "\<C-X>\<C-N>"                       " existing text matching
         "return "\<C-X>\<C-P>"                       " existing text matching
