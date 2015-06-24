@@ -9,7 +9,7 @@ function! <SID>Smart_TabComplete()
                                                     " line to one character right
                                                     " of the cursor
     let l:charBefroeCurrsor = substr[strlen(substr)-1]
-    if ( l:charBefroeCurrsor == ' ' || l:charBefroeCurrsor == '\t' || col('.') == 1 )
+    if ( l:charBefroeCurrsor == ' ' || l:charBefroeCurrsor == '	' || col('.') == 1 )
         return "\<tab>"
     endif
 
