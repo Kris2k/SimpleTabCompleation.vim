@@ -18,14 +18,14 @@ function! <SID>Smart_TabComplete()
     let l:has_omnifunc = strlen(&omnifunc)
 
     if (!l:has_slash)
-        return "\<C-X>\<C-N>"                       " existing text matching
-        "return "\<C-X>\<C-P>"                       " existing text matching
+        " return "\<C-X>\<C-N>"                       " existing text matching
+        return "\<C-X>\<C-P>"                       " existing text matching
     elseif (l:has_slash)
         return "\<C-X>\<C-F>"                       " file matching
     elseif (l:has_omnifunc)
         return "\<C-X>\<C-O>"                       " plug-in matching
     else
-        return "\<C-X>\<C-N>"                       " existing text matching
+        return "\<C-X>\<C-P>"                       " existing text matching
     endif
 
 endfunction
